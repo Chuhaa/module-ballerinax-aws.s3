@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Ballerina Build
+        uses: Chuhaa/ballerina-action/@slp5
+        with:
+          args:
+            build -a -c --skip-tests
